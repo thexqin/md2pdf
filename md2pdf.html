@@ -8,17 +8,17 @@
     <style>
         :root {
             /* Application Theme UI colors */
-            --ui-bg: #1e1e24;
-            --ui-card: #2a2b36;
-            --ui-text: #f8f8f2;
-            --ui-accent: #3498db;
-            --ui-border: #3d3f4d;
+            --ui-bg: #24292f;
+            --ui-card: #2f363d;
+            --ui-text: #f6f8fa;
+            --ui-accent: #0969da;
+            --ui-border: #444c56;
 
-            /* Default Typography Variables */
+            /* Default Typography Variables matching GitHub */
             --base-font-size: 16px;
             --heading-weight: 400;
             --bold-weight: 600;
-            --line-height: 1.6;
+            --line-height: 1.5;
             
             /* Physical page consistency */
             --preview-margin: 12mm; 
@@ -26,12 +26,12 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
             display: flex;
             flex-direction: column;
             height: 100vh;
             background-color: #fcfcfc;
-            color: #333;
+            color: #24292f;
         }
 
         /* Top Application Bar */
@@ -59,7 +59,7 @@
         }
 
         .logo span {
-            color: var(--ui-accent);
+            color: #58a6ff;
         }
 
         .actions {
@@ -86,12 +86,12 @@
         }
 
         .control-group label {
-            color: #b2b2b2;
+            color: #8b949e;
             white-space: nowrap;
         }
 
         .control-group input[type="range"] {
-            accent-color: var(--ui-accent);
+            accent-color: #58a6ff;
             width: 90px;
             cursor: pointer;
         }
@@ -105,27 +105,31 @@
 
         /* Interactive Buttons */
         .btn {
-            background: #3d3f4d;
-            color: #fff;
-            border: none;
+            background: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
             padding: 7px 16px;
             font-size: 0.85rem;
             font-weight: 500;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .btn:hover {
-            background: #4e5163;
+            background: #30363d;
+            border-color: #8b949e;
         }
 
         .btn-primary {
-            background: var(--ui-accent);
+            background: #238636;
+            color: #ffffff;
+            border-color: rgba(240,246,252,0.1);
         }
 
         .btn-primary:hover {
-            background: #2980b9;
+            background: #2ea043;
+            border-color: rgba(240,246,252,0.1);
         }
 
         #file-input {
@@ -143,8 +147,8 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: #282a36;
-            border-right: 1px solid #d0d0d0;
+            background-color: #0d1117;
+            border-right: 1px solid #30363d;
         }
 
         #markdown-input {
@@ -155,9 +159,9 @@
             outline: none;
             padding: 24px;
             box-sizing: border-box;
-            background-color: #282a36;
-            color: #f8f8f2;
-            font-family: 'Fira Code', 'Courier New', Courier, monospace;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -167,109 +171,157 @@
             background-color: #ffffff;
             overflow-y: auto;
             box-sizing: border-box;
-            padding: 40px; 
+            padding: var(--preview-margin); 
         }
 
-        /* Cleaned & Balanced Document Typography Rules */
+        /* =======================================================
+           EXACT GITHUB MARKDOWN LIGHT-MODE TYPOGRAPHY RULES
+           ======================================================= */
         .markdown-body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            color: #2c3e50;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            color: #24292f;
             max-width: 800px;
             margin: 0 auto;
+            word-wrap: break-word;
             
             /* Dynamic Controls mapped via CSS custom variables */
             font-size: var(--base-font-size);
             line-height: var(--line-height);
         }
 
-        /* Normalized Headings */
+        /* Headings Configuration */
         .markdown-body h1, 
         .markdown-body h2, 
         .markdown-body h3, 
-        .markdown-body h4 {
-            color: #1a252f;
+        .markdown-body h4,
+        .markdown-body h5,
+        .markdown-body h6 {
+            color: #24292f;
             font-weight: var(--heading-weight);
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
+            margin-top: 24px;
+            margin-bottom: 16px;
             line-height: 1.25;
             break-after: avoid; 
         }
 
-        .markdown-body h1 { font-size: 1.85em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
-        .markdown-body h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.2em; margin-top: 1.3em;}
-        .markdown-body h3 { font-size: 1.15em; }
+        .markdown-body h1 { font-size: 2em; border-bottom: 1px solid #d8dee4; padding-bottom: 0.3em; }
+        .markdown-body h2 { font-size: 1.5em; border-bottom: 1px solid #d8dee4; padding-bottom: 0.3em; }
+        .markdown-body h3 { font-size: 1.25em; }
+        .markdown-body h4 { font-size: 1em; }
+        .markdown-body h5 { font-size: 0.875em; }
+        .markdown-body h6 { font-size: 0.85em; color: #57606a; }
 
-        /* Strip margin-top from the absolute first element to prevent first-page layout displacement */
         .markdown-body > :first-child {
             margin-top: 0 !important;
         }
 
         .markdown-body strong {
             font-weight: var(--bold-weight);
-            color: #111;
+            color: #24292f;
         }
 
         .markdown-body p, 
         .markdown-body ul, 
-        .markdown-body ol {
+        .markdown-body ol,
+        .markdown-body dl,
+        .markdown-body table,
+        .markdown-body pre {
             margin-top: 0;
-            margin-bottom: 1em;
+            margin-bottom: 16px;
         }
 		
 		.markdown-body a {
-			color: #0366d6;
+			color: #0969da;
 			text-decoration: none;
 		}
+
+        .markdown-body a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        .markdown-body ul, 
+        .markdown-body ol {
+            padding-left: 2em;
+        }
 
         .markdown-body li {
             margin-top: 0.25em;
         }
 
-        /* Code & blockquotes decoration rules */
-        .markdown-body code {
-            font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
-            background-color: #f3f4f6;
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
-            font-size: 88%;
-            color: #e06c75;
+        .markdown-body li + li {
+            margin-top: 0.25em;
         }
 
+        /* Code Elements styling */
+        .markdown-body code {
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            background-color: rgba(175,184,193,0.2);
+            padding: 0.2em 0.4em;
+            border-radius: 6px;
+            font-size: 85%;
+            color: #24292f;
+        }
+
+        /* Code Blocks styling */
         .markdown-body pre {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
+            background-color: #f6f8fa;
             border-radius: 6px;
             padding: 16px;
             overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
         }
 
+        .markdown-body pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: 100%;
+            color: inherit;
+            word-break: normal;
+            white-space: pre;
+        }
+
+        /* Blockquotes styling */
         .markdown-body blockquote {
-            margin: 1.5em 0;
+            margin: 0 0 16px 0;
             padding: 0 1em;
-            color: #6a737d;
-            border-left: 4px solid #cbd5e1;
-            font-style: italic;
+            color: #57606a;
+            border-left: .25em solid #d0d7de;
+        }
+
+        /* Horizontal Rules styling */
+        .markdown-body hr {
+            height: .25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #d0d7de;
+            border: 0;
         }
 
         /* Tables layout design */
         .markdown-body table {
             border-collapse: collapse;
             width: 100%;
-            margin-bottom: 1.5em;
-            font-size: 90%;
+            display: block;
+            overflow: auto;
         }
         .markdown-body table th, 
         .markdown-body table td {
-            border: 1px solid #e2e8f0;
-            padding: 8px 12px;
-            text-align: left;
+            border: 1px solid #d0d7de;
+            padding: 6px 13px;
         }
         .markdown-body table th {
-            background-color: #f8fafc;
-            font-weight: var(--heading-weight);
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        .markdown-body table tr {
+            background-color: #ffffff;
+            border-top: 1px solid #d0d7de;
         }
         .markdown-body table tr:nth-child(even) {
-            background-color: #f8fafc;
+            background-color: #f6f8fa;
         }
 
         /* =======================================================
@@ -306,7 +358,6 @@
                 max-width: 100%;
             }
 
-            /* Prevents items breaking in half across pages layout breaks */
             .markdown-body pre, 
             .markdown-body blockquote, 
             .markdown-body table, 
@@ -346,8 +397,8 @@
             </div>
             <div class="control-group">
                 <label for="input-height">Line Spacing:</label>
-                <input type="range" id="input-height" min="1.3" max="2.0" value="1.6" step="0.1" oninput="updateStyle('--line-height', this.value, this.id)">
-                <div class="control-value" id="val-input-height">1.6</div>
+                <input type="range" id="input-height" min="1.3" max="2.0" value="1.5" step="0.1" oninput="updateStyle('--line-height', this.value, this.id)">
+                <div class="control-value" id="val-input-height">1.5</div>
             </div>
             <div class="control-group">
                 <label for="input-margin">Page Margin:</label>
@@ -369,6 +420,13 @@
     <script>
         const markdownInput = document.getElementById('markdown-input');
         const previewElement = document.getElementById('preview');
+
+        // FIXED: Modern syntax for configuring options in Marked.js v4+
+        marked.use({
+            gfm: true,
+            breaks: false,
+            pedantic: false
+        });
 
         const sampleMarkdown = `# Multi-page Print Layout Verification
 This document contains extended baseline body blocks specifically constructed to flow beyond a single physical sheet. Adjust the margin slider to observe how page 2 and page 3 now completely respect bounding alignments.
